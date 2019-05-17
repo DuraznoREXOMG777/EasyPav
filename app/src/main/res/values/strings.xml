@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">EasyPav</string>
     <string name="action_settings">Settings</string>
+    <string name="btn_ext_fab">CREATE</string>
+    <string name="hint_name">Name</string>
+
+    <string name="floorType">Tipo de pavimento</string>
+    <string name="rb_rigido">Rigido</string>
+    <string name="rb_flexible">Flexible</string>
 </resources>
