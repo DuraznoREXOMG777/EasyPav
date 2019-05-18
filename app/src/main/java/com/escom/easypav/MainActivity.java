@@ -4,6 +4,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
 
+import com.escom.easypav.entities.Project;
 import com.escom.easypav.utils.IProjectDialog;
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -24,6 +25,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.RadioGroup;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import butterknife.BindString;
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -36,6 +40,8 @@ public class MainActivity extends AppCompatActivity implements IProjectDialog {
     ExtendedFloatingActionButton fab;
     @BindView(R.id.toolbar)
     Toolbar toolbar;
+
+    List<Project> projects = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,12 +79,14 @@ public class MainActivity extends AppCompatActivity implements IProjectDialog {
     }
 
     @Override
-    public void onDialogConfirm(String project, String type) {
-        // TODO: 5/16/19 Create the project object.
-
-
+    public void onDialogConfirm(String name, String type) {
+        Project project1 = new Project(name, type);
+        projects.add(project1);
     }
 
+    /**
+     * Custom Dialog Class. In progress.
+     */
     public static class ProjectDialog extends AppCompatDialogFragment {
 
         @BindView(R.id.et_name)
@@ -91,7 +99,6 @@ public class MainActivity extends AppCompatActivity implements IProjectDialog {
         String rigido;
         @BindString(R.string.rb_flexible)
         String flexible;
-
 
         IProjectDialog dialogListener;
 

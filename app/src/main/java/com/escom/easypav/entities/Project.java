@@ -1,8 +1,24 @@
 package com.escom.easypav.entities;
 
+
+import androidx.annotation.NonNull;
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+@Entity
 public class Project {
 
+    @PrimaryKey
+    @NonNull
+    private int id;
+
+    @NonNull
+    @ColumnInfo(name = "name")
     private String name;
+
+    @NonNull
+    @ColumnInfo(name = "type")
     private String type;
 
     public Project(String name, String type) {
